@@ -13,7 +13,7 @@ Extension Chrome/Edge giúp bạn tùy chỉnh bảng tin YouTube: lọc video c
 - **Nhãn AI:** kiểm tra nhãn YouTube dù tiêu đề không chứa từ “AI”.
 - **Từ khóa:** lọc nội dung về AI, thêm từ khóa riêng.
 - **Lọc thể loại:** tùy chọn ẩn truyện xuyên không / trọng sinh.
-- **Lọc kênh:** chặn kênh Vietsub, thêm danh sách chặn hoặc cho phép.
+- **Lọc kênh:** chặn tên có Sub/Vietsub, tự thêm từ khóa kênh, danh sách chặn hoặc cho phép.
 - **Bạn kiểm soát:** hiện lại video, xem lý do lọc hoặc ẩn hoàn toàn.
 - **Bộ đếm:** số thẻ video đang bị chặn trên tab hiện tại.
 - **Giao diện tiếng Việt:** tông tối, công tắc nhanh, hai tab cài đặt.
@@ -53,7 +53,8 @@ Filters use visible text and YouTube AI disclosures, not audio/image analysis. S
 - Trong popup: bật/tắt, đổi phạm vi, ẩn hoàn toàn, thêm từ khóa và quản lý danh sách kênh. Bấm **Lưu cài đặt** để áp dụng vào các tab đang mở.
 - Popup hiển thị số thẻ video **đang bị chặn trên tab YouTube hiện tại**, cập nhật mỗi giây khi popup mở. Không cộng dồn lịch sử hoặc cộng các tab khác; hiện lại video hoặc tắt lọc sẽ giảm số đếm. Các thẻ cùng video xuất hiện nhiều vị trí được đếm riêng.
 - Mặc định bật **Lọc truyện xuyên không / trọng sinh** theo tiêu đề: “xuyên về”, “xuyên không”, “xuyên đến”, “trọng sinh”, “tái sinh”, “chuyển sinh”. Nhóm này lọc ngay cả khi không tìm thấy nhãn AI. Đây là lựa chọn lọc thể loại theo yêu cầu, không phải khẳng định video đó dùng AI. Có thể tắt hoặc cho phép kênh để giữ video thuộc nhóm này.
-- Mặc định bật **Chặn kênh có tên Vietsub**: ẩn video khi tên kênh hoặc @handle chứa `Vietsub`, kể cả `Viet Sub`, `Viet-sub`, `Viet_sub`, `Viet.sub`, không phân biệt hoa/thường. Quy tắc chỉ xét kênh, không xét chữ Vietsub trong tiêu đề video hoặc ID kênh. Có thể tắt trong popup hoặc thêm kênh vào danh sách cho phép.
+- Mặc định bật **Từ khóa trong tên kênh**, với danh sách `Sub`, `Vietsub`. Ẩn video khi tên kênh hoặc @handle chứa một mục trong danh sách, không phân biệt hoa/thường hoặc dấu tiếng Việt, kể cả chữ ghép như `EngSub`, `PhimSubHay`. Vì `Sub` khớp chuỗi con nên tên như `Subscribe TV` cũng khớp. Quy tắc chỉ xét kênh, không xét tiêu đề video, mô tả hay ID kênh.
+- Thêm hoặc sửa từ tại **Tùy chỉnh → Từ khóa chặn kênh**, mỗi dòng một từ/cụm từ, rồi **Lưu cài đặt**. Xóa hết để tắt việc chặn bằng danh sách từ khóa kênh. Công tắc ở tab Bộ lọc bật/tắt toàn bộ quy tắc này. Kênh trong danh sách cho phép vẫn được ưu tiên (trừ nhãn AI).
 - Mỗi dòng một từ khóa hoặc kênh. Kênh nhận tên chính xác, `@handle`, `/@handle`, hoặc `/channel/ID`. Tên hiển thị có thể trùng; ưu tiên handle hoặc đường dẫn kênh.
 - Tắt lọc sẽ khôi phục các thẻ video đã ẩn. Tiện ích không dừng video đang phát hoặc tự bỏ qua Shorts trong trình phát.
 

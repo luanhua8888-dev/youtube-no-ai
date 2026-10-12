@@ -29,12 +29,15 @@ test('popup đọc số video từ tab hiện tại và lưu tùy chọn lọc t
     assert.deepEqual(messages, [[23, 'noai-status']]);
     assert.equal(document.getElementById('filterStories').checked, true);
     assert.equal(document.getElementById('filterVietsubChannels').checked, true);
+    assert.equal(document.getElementById('channelKeywords').value, 'Sub\nVietsub');
+    document.getElementById('channelKeywords').value = 'Sub\nDrama\n  \nDrama';
     document.getElementById('filterVietsubChannels').checked = false;
     document.getElementById('filterStories').checked = false;
     document.getElementById('settings-form').dispatchEvent(new dom.window.Event('submit', { cancelable: true }));
     await tick();
     assert.equal(settings.filterStories, false);
     assert.equal(settings.filterVietsubChannels, false);
+    assert.deepEqual(Array.from(settings.channelKeywords), ['Sub', 'Drama']);
     assert.deepEqual(Array.from(settings.keywords), ['example']);
   } finally { dom.window.close(); }
 });

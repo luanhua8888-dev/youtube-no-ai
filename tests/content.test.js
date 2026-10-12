@@ -143,7 +143,7 @@ test('lọc kênh Vietsub và cập nhật số đếm khi tắt tùy chọn', a
   try {
     assert.equal((await dom.window.readFilterStatus()).hidden, 1);
     assert.ok(dom.window.document.getElementById('vietsub').classList.contains('yt-noai-hidden'));
-    assert.match(dom.window.document.querySelector('.yt-noai-placeholder').textContent, /Vietsub/);
+    assert.match(dom.window.document.querySelector('.yt-noai-placeholder').textContent, /Từ khóa kênh: Sub/);
     await dom.window.chrome.storage.local.set({ settings: { filterVietsubChannels: false } });
     assert.equal((await dom.window.readFilterStatus()).hidden, 0);
   } finally { dom.window.close(); }

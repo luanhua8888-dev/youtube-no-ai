@@ -2,7 +2,7 @@
 
 ## Gói tải lên
 
-File `output/youtube-khong-ai-1.4.0.zip` chứa manifest ở gốc, mã chạy của tiện ích và icon. Không chứa `node_modules`, kiểm thử hoặc ảnh minh họa. Đây là gói code để tải lên, không thay thế các mục hồ sơ cửa hàng bên dưới.
+File `output/youtube-khong-ai-1.5.0.zip` chứa manifest ở gốc, mã chạy của tiện ích và icon. Không chứa `node_modules`, kiểm thử hoặc ảnh minh họa. Đây là gói code để tải lên, không thay thế các mục hồ sơ cửa hàng bên dưới.
 
 ## Quy trình
 
@@ -25,7 +25,7 @@ YouTube Không AI giúp bạn ẩn các thẻ video không muốn xem trên YouT
 
 - Lọc nội dung về AI hoặc video có dấu hiệu do AI tạo bằng từ khóa.
 - Kiểm tra nhãn AI của YouTube ngay cả khi tiêu đề không nhắc AI. Kiểm tra bổ sung tải thông tin trang video từ YouTube khi thẻ gần vùng nhìn thấy; có thể mất vài giây.
-- Tùy chọn lọc nhóm truyện xuyên không/trọng sinh và kênh có tên Vietsub. Đây là bộ lọc theo sở thích, không phải xác nhận các video thuộc nhóm đó do AI tạo.
+- Tùy chọn lọc nhóm truyện xuyên không/trọng sinh và tên kênh chứa Sub/Vietsub hoặc từ khóa bạn tự nhập. Đây là bộ lọc theo sở thích, không phải xác nhận các video thuộc nhóm đó do AI tạo.
 - Thêm từ khóa, chặn kênh, cho phép kênh và hiện lại video bị lọc nhầm.
 - Xem số video đang bị chặn trên tab hiện tại.
 - Giao diện tiếng Việt, tùy chọn ẩn hoàn toàn hoặc hiển thị lý do lọc.

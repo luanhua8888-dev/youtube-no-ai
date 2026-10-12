@@ -67,3 +67,21 @@ test('chỉ xét kênh cho Vietsub; tắt tùy chọn hoặc cho phép kênh s�
   assert.equal(classify({ title: 'Một ngày bình thường', channel: { name: 'Du lịch Việt Nam' } }), null);
   assert.equal(cleanSettings({ enabled: true }).filterVietsubChannels, true);
 });
+test('mặc định chặn Sub ở tên kênh và handle, kể cả chữ ghép', () => {
+  for (const channel of [{ name: 'Phim Sub' }, { name: 'ENGSUB TV' }, { name: 'SUB Review' }, { handle: '@phimsubhay' }]) {
+    assert.equal(classify({ title: 'Video bình thường', channel }).reason, 'Từ khóa kênh: Sub');
+  }
+  assert.deepEqual(cleanSettings({ filterVietsubChannels: true }).channelKeywords, ['Sub', 'Vietsub']);
+});
+test('từ khóa kênh riêng chỉ xét tên/handle, có thể sửa, xóa hoặc cho phép kênh', () => {
+  const settings = { channelKeywords: ['Drama', 'Review Truyện'] };
+  assert.equal(classify({ title: 'Nấu ăn', channel: { name: 'DRAMA TV' } }, settings).reason, 'Từ khóa kênh: Drama');
+  assert.equal(classify({ title: 'Nấu ăn', channel: { handle: '@dramatv' } }, settings).type, 'channel');
+  assert.equal(classify({ title: 'Nấu ăn', channel: { name: 'Review Truyện Hay' } }, settings).type, 'channel');
+  assert.equal(classify({ title: 'Drama', description: 'Review Truyện', channel: { name: 'Phim Hay', path: '/channel/Drama' } }, settings), null);
+  assert.equal(classify({ title: 'Nấu ăn', channel: { name: 'Phim Sub' } }, settings), null);
+  const video = { title: 'Nấu ăn', channel: { name: 'Drama TV' } };
+  assert.equal(classify(video, { ...settings, channelKeywords: [] }), null);
+  assert.equal(classify(video, { ...settings, filterVietsubChannels: false }), null);
+  assert.equal(classify(video, { ...settings, allowedChannels: ['Drama TV'] }), null);
+});

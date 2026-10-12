@@ -1,6 +1,6 @@
 # Chính sách quyền riêng tư — YouTube Không AI
 
-Cập nhật: 12/10/2026. Áp dụng cho phiên bản 1.4.0.
+Cập nhật: 12/10/2026. Áp dụng cho phiên bản 1.5.0.
 
 > Trước khi đăng công khai, thay thông tin nhà phát triển và liên hệ ở cuối trang bằng thông tin thật.
 
@@ -14,7 +14,7 @@ Khi bật kiểm tra nhãn AI từ trang video, tiện ích gửi yêu cầu HTT
 
 ## Lưu trữ và thời hạn
 
-Cài đặt bật/tắt, từ khóa, danh sách chặn và danh sách cho phép được lưu trong `chrome.storage.local` trên máy của người dùng, không dùng đồng bộ tài khoản.
+Cài đặt bật/tắt, từ khóa nội dung, từ khóa tên kênh, danh sách chặn và danh sách cho phép được lưu trong `chrome.storage.local` trên máy của người dùng, không dùng đồng bộ tài khoản.
 
 Kết quả kiểm tra nhãn được lưu trong bộ nhớ của từng tab, tối đa 500 mục. Kết quả hết hạn sau 1 giờ; khi kiểm tra không thành công, mục tạm hết hạn sau 10 phút. Tải lại hoặc đóng tab sẽ xóa bộ nhớ này. Số đếm không phải lịch sử cộng dồn và không được gửi cho nhà phát triển.
 

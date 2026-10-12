@@ -1,8 +1,8 @@
 (() => {
   'use strict';
   const api = globalThis.YouTubeAIFilter;
-  const fields = ['enabled', 'mode', 'compact', 'checkLabels', 'filterStories', 'filterVietsubChannels', 'keywords', 'blockedChannels', 'allowedChannels'];
-  const lists = ['keywords', 'blockedChannels', 'allowedChannels'];
+  const fields = ['enabled', 'mode', 'compact', 'checkLabels', 'filterStories', 'filterVietsubChannels', 'channelKeywords', 'keywords', 'blockedChannels', 'allowedChannels'];
+  const lists = ['keywords', 'channelKeywords', 'blockedChannels', 'allowedChannels'];
   const status = document.getElementById('status');
   const save = document.getElementById('save');
   const enabledBadge = document.getElementById('enabled-badge');

@@ -7,6 +7,7 @@
     checkLabels: true,
     filterStories: true,
     filterVietsubChannels: true,
+    channelKeywords: ['Sub', 'Vietsub'],
     keywords: [],
     blockedChannels: [],
     allowedChannels: []
@@ -45,7 +46,7 @@
   }
   function cleanSettings(value = {}) {
     const settings = { ...defaults, ...value };
-    for (const key of ['keywords', 'blockedChannels', 'allowedChannels']) {
+    for (const key of ['keywords', 'channelKeywords', 'blockedChannels', 'allowedChannels']) {
       settings[key] = Array.isArray(settings[key])
         ? [...new Set(settings[key].filter(v => typeof v === 'string').map(v => v.trim()).filter(Boolean))] : [];
     }
@@ -68,9 +69,9 @@
     if (settings.allowedChannels.some(entry => matchChannel(channel, entry))) return null;
     const blocked = settings.blockedChannels.find(entry => matchChannel(channel, entry));
     if (blocked) return { type: 'channel', reason: `Kênh bị chặn: ${blocked}` };
-    if (settings.filterVietsubChannels && [channel.name, channel.handle].some(value => /viet[\s._-]*sub/.test(normalize(value)))) {
-      return { type: 'channel', reason: 'Tên kênh hoặc handle chứa Vietsub' };
-    }
+    const channelKeyword = settings.filterVietsubChannels && settings.channelKeywords.find(term =>
+      [channel.name, channel.handle].some(value => normalize(value).includes(normalize(term))));
+    if (channelKeyword) return { type: 'channel', reason: `Từ khóa kênh: ${channelKeyword}` };
     const text = [video.title, video.description, channel.name, channel.handle].filter(Boolean).join(' ');
     const custom = settings.keywords.find(term => includesTerm(text, term));
     if (custom) return { type: 'keyword', reason: `Từ khóa của bạn: ${custom}` };
