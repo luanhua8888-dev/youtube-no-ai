@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Không AI",
+  "version": "1.4.0",
+  "description": "Lọc video do AI tạo và nội dung về AI trên YouTube bằng từ khóa và danh sách kênh.",
+  "permissions": ["storage"],
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "action": { "default_popup": "popup.html", "default_title": "YouTube Không AI", "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" } },
+  "content_scripts": [{
+    "matches": ["https://www.youtube.com/*"],
+    "js": ["filter.js", "disclosure.js", "content.js"],
+    "css": ["content.css"],
+    "run_at": "document_idle"
+  }]
+}

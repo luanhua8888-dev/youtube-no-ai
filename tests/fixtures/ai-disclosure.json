@@ -1,0 +1,37 @@
+{
+  "contents": {
+    "twoColumnWatchNextResults": {
+      "results": {
+        "results": {
+          "contents": [{
+            "videoPrimaryInfoRenderer": {
+              "badges": [{
+                "metadataBadgeRenderer": {
+                  "icon": { "iconType": "INFO" },
+                  "style": "BADGE_STYLE_TYPE_SIMPLE",
+                  "label": "AI",
+                  "accessibilityData": { "label": "AI: Content was made with AI" }
+                }
+              }]
+            }
+          }]
+        }
+      }
+    }
+  },
+  "engagementPanels": [{
+    "engagementPanelSectionListRenderer": {
+      "content": {
+        "structuredDescriptionContentRenderer": {
+          "items": [{
+            "howThisWasMadeSectionViewModel": {
+              "sectionTitle": { "content": "How this was made" },
+              "bodyText": { "content": "Sounds or visuals were altered or fully generated. Learn more" },
+              "bodyHeader": { "content": "Made with AI" }
+            }
+          }]
+        }
+      }
+    }
+  }]
+}

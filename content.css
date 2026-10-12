@@ -1,0 +1,26 @@
+.yt-noai-hidden { display: none !important; }
+.yt-noai-placeholder {
+  box-sizing: border-box;
+  padding: 18px;
+  margin: 0 8px 16px;
+  min-width: 180px;
+  flex: 1 1 260px;
+  border: 1px solid var(--yt-spec-10-percent-layer, #ccc);
+  border-radius: 12px;
+  background: var(--yt-spec-badge-chip-background, #f3f3f3);
+  color: var(--yt-spec-text-primary, #222);
+  font: 14px/1.5 Roboto, Arial, sans-serif;
+}
+.yt-noai-placeholder strong, .yt-noai-placeholder span { display: block; margin-bottom: 8px; }
+.yt-noai-placeholder span { opacity: .75; }
+.yt-noai-placeholder button {
+  font: inherit;
+  color: inherit;
+  border: 1px solid var(--yt-spec-10-percent-layer, #aaa);
+  border-radius: 20px;
+  background: transparent;
+  padding: 6px 12px;
+  margin: 4px 8px 0 0;
+  cursor: pointer;
+}
+.yt-noai-placeholder button:hover { background: var(--yt-spec-10-percent-layer, #ddd); }

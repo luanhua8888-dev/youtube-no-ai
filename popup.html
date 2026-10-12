@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>YouTube Không AI</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <header class="brand">
+    <img class="logo" src="icons/icon48.png" alt="" width="44" height="44">
+    <div class="brand-copy"><span class="eyebrow">ÍT NHIỄU. NHIỀU NỘI DUNG HAY.</span><h1>YouTube Không AI</h1></div>
+    <span class="version">v1.4</span>
+  </header>
+  <section class="counter" aria-label="Thống kê lọc video">
+    <div class="counter-top"><span class="eyebrow">TRÊN TAB HIỆN TẠI</span><span id="enabled-badge" class="badge"><i></i>Đang bật</span></div>
+    <div class="count-line" role="status" aria-live="polite"><strong id="blocked-count">—</strong><div><span id="count-label">Đang đọc số video bị chặn…</span><p>Bảng tin gọn hơn, xem thoải mái hơn.</p></div></div>
+  </section>
+  <form id="settings-form">
+    <label class="master-switch" for="enabled"><span><strong>Bật lọc video</strong></span><input id="enabled" type="checkbox" role="switch"></label>
+    <div class="tabs" role="tablist" aria-label="Cài đặt bộ lọc">
+      <button id="tab-filters" class="tab active" type="button" role="tab" aria-selected="true" aria-controls="panel-filters" data-panel="panel-filters">Bộ lọc</button>
+      <button id="tab-custom" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-custom" tabindex="-1" data-panel="panel-custom">Tùy chỉnh</button>
+    </div>
+    <main class="settings-scroll">
+      <section id="panel-filters" role="tabpanel" aria-labelledby="tab-filters">
+        <label class="field-label" for="mode">Bạn muốn lọc nội dung nào?</label>
+        <select id="mode"><option value="all">Video do AI tạo + nội dung về AI</option><option value="generated">Chỉ video có dấu hiệu do AI tạo</option></select>
+        <div class="rule-list">
+          <label class="switch-row" for="checkLabels"><span class="rule-icon" aria-hidden="true">✦</span><span class="rule-copy"><strong>Kiểm tra nhãn AI</strong><small>Đọc nhãn YouTube, kể cả khi tiêu đề không có AI.</small></span><input id="checkLabels" type="checkbox" role="switch"></label>
+          <label class="switch-row" for="filterStories"><span class="rule-icon" aria-hidden="true">≋</span><span class="rule-copy"><strong>Truyện xuyên không / trọng sinh</strong><small>Lọc nhóm tiêu đề truyện. Có thể ẩn cả video không AI.</small></span><input id="filterStories" type="checkbox" role="switch"></label>
+          <label class="switch-row" for="filterVietsubChannels"><span class="rule-icon" aria-hidden="true">⊘</span><span class="rule-copy"><strong>Kênh có tên Vietsub</strong><small>Khớp cả Viet Sub, Viet-sub trong tên hoặc @handle.</small></span><input id="filterVietsubChannels" type="checkbox" role="switch"></label>
+          <label class="switch-row" for="compact"><span class="rule-icon" aria-hidden="true">−</span><span class="rule-copy"><strong>Ẩn hoàn toàn</strong><small>Bỏ cả ô giải thích và nút hiện lại video.</small></span><input id="compact" type="checkbox" role="switch"></label>
+        </div>
+        <p class="note"><span aria-hidden="true">ⓘ</span> Kiểm tra nhãn có thể mất vài giây. Kênh được cho phép vẫn bị lọc nếu có nhãn AI.</p>
+      </section>
+      <section id="panel-custom" role="tabpanel" aria-labelledby="tab-custom" hidden>
+        <div class="panel-intro"><h2>Bộ lọc theo ý bạn</h2><p>Mỗi dòng một mục. Cài đặt được lưu trên máy của bạn.</p></div>
+        <label class="field-label" for="keywords">Từ khóa bổ sung<span class="field-tag">TIÊU ĐỀ & KÊNH</span></label><textarea id="keywords" rows="3" placeholder="Ví dụ: AI cover&#10;review truyện"></textarea>
+        <label class="field-label" for="blockedChannels">Kênh bị chặn</label><textarea id="blockedChannels" rows="2" placeholder="Tên kênh, @handle hoặc /channel/ID"></textarea>
+        <label class="field-label" for="allowedChannels">Kênh luôn được hiển thị<span class="field-tag mint">NGOẠI LỆ</span></label><textarea id="allowedChannels" rows="2" placeholder="Tên kênh, @handle hoặc /channel/ID"></textarea>
+        <p class="note"><span aria-hidden="true">ⓘ</span> Kênh cho phép ưu tiên hơn từ khóa, thể loại và danh sách chặn; không bỏ qua nhãn AI. Tên kênh cần khớp chính xác.</p>
+      </section>
+    </main>
+    <div class="save-bar"><button id="save" class="save-button" type="submit">Lưu cài đặt <span aria-hidden="true">↗</span></button><p id="status" role="status" aria-live="polite"></p></div>
+  </form>
+  <footer><span class="privacy-dot"></span>Chỉ kết nối YouTube<span class="footer-divider">·</span>Có thể lọc nhầm hoặc bỏ sót</footer>
+  <script src="filter.js"></script><script src="popup.js"></script>
+</body>
+</html>
